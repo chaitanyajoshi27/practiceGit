@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/chaitanyajoshi27/practiceGit.git'
+                git url: "https://github.com/chaitanyajoshi27/practiceGit.git", branch: 'main'
             }
         }
     }
