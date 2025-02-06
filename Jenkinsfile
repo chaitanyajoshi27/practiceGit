@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello CJ, from github'
+                git 'https://github.com/chaitanyajoshi27/practiceGit.git'
             }
         }
     }
