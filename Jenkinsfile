@@ -4,13 +4,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: "https://github.com/chaitanyajoshi27/practiceGit.git", branch: 'main'
+                git 'https://github.com/chaitanyajoshi27/maven-project.git'
             }
         }
-        stage('Sleep') {
+        stage('Build') {
             steps {
-                sleep(30)
+                withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) 
+                {
+                    sh 'mvn compile'
+                }
             }
-        }
+        }              
     }
 }
