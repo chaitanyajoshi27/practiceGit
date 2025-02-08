@@ -6,6 +6,9 @@ pipeline {
             steps {
                 git url: "https://github.com/chaitanyajoshi27/practiceGit.git", branch: 'main'
             }
+            steps {
+                sleep(30)
+            }
         }
     }
 }
